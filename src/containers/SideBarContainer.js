@@ -30,8 +30,7 @@ class SideBarContainer extends React.Component{
     })
   }
 
-  handleEditSubmit = (selectedNews, event) => {
-    event.preventDefault()
+  handleEditSubmit = (selectedNews) => {
     const uncheckedNews = selectedNews.filter((newsObj) => !newsObj.checked).map((newsObj) => newsObj.website)
     const newNewsArray = this.props.listArray.filter((newsObj) => !uncheckedNews.includes(newsObj.website))
 
@@ -45,7 +44,7 @@ class SideBarContainer extends React.Component{
         <NewsListContainer listArray = {this.state.listArray} handleClick= {this.handleClick}/>
         <MainContainer currentNewsObj = {this.state.currentNewsObj} listArray = {this.state.listArray}/>
         <EditForm display={this.state.display} listArray = {this.state.listArray} handleEditSubmit={this.handleEditSubmit}/>
-        <button onClick = {this.handleEditClick}>Edit Settings</button>
+        <button onClick = {this.handleEditClick}>{this.state.display ? "Hide Edit Form" : "Edit List"}</button>
       </div>
     )
   }

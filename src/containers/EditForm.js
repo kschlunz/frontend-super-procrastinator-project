@@ -31,7 +31,7 @@ class EditForm extends React.Component{
       }
     })
 
-    this.setState({selectedNews: newSelectedNews})
+    this.setState({selectedNews: newSelectedNews}, this.props.handleEditSubmit(this.state.selectedNews))
   }
 
   render(){
@@ -39,11 +39,10 @@ class EditForm extends React.Component{
     const detailNews = this.state.selectedNews.map((newsObj) => {return <ToggleForm newsObj = {newsObj} handleToggle={this.handleToggle}/>})
 
     const form = (
-        <form onSubmit={(event) => this.props.handleEditSubmit(this.state.selectedNews, event)}>
+        <form>
           <ul>
             {detailNews}
           </ul>
-          <input type="submit"/>
         </form>
       )
 
