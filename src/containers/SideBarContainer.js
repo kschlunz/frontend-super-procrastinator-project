@@ -41,10 +41,12 @@ class SideBarContainer extends React.Component{
   render(){
     return(
       <div>
-        <NewsListContainer listArray = {this.state.listArray} handleClick= {this.handleClick}/>
-        <MainContainer currentNewsObj = {this.state.currentNewsObj} listArray = {this.state.listArray}/>
-        <EditForm display={this.state.display} listArray = {this.state.listArray} handleEditSubmit={this.handleEditSubmit}/>
-        <button onClick = {this.handleEditClick}>{this.state.display ? "Hide Edit Form" : "Edit List"}</button>
+        <div id="flexContainer">
+          <NewsListContainer listArray = {this.state.listArray} handleClick= {this.handleClick}/>
+          <MainContainer currentNewsObj = {this.state.currentNewsObj} listArray = {this.state.listArray}/>
+        </div>
+        <EditForm handleEditClick={this.handleEditClick} display={this.state.display} listArray = {this.state.listArray} handleEditSubmit={this.handleEditSubmit}/>
+        <button onClick = {this.handleEditClick}>Edit List</button>
       </div>
     )
   }

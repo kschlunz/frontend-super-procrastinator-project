@@ -22,9 +22,9 @@ state = {
 
   render() {
     return (
-      <div >
+      <div id="app">
+        <h1>Procrastinator Newsfeed</h1>
         <SideBarContainer listArray={this.state.listArray} />
-
       </div>
     );
   }
