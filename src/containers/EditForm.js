@@ -39,18 +39,20 @@ class EditForm extends React.Component{
     const detailNews = this.state.selectedNews.map((newsObj) => {return <ToggleForm newsObj = {newsObj} handleToggle={this.handleToggle}/>})
 
     const form = (
-      <div className="popup_inner">
-        <form>
-          <ul>
-            {detailNews}
-          </ul>
-        </form>
-        <button onClick = {this.props.handleEditClick}>Close Window</button>
+      <div id="popup_inner">
+        <div id="popup_innermost">
+          <form>
+            <ul>
+              {detailNews}
+            </ul>
+          </form>
+          <button onClick = {this.props.handleEditClick}>Close Window</button>
+        </div>
       </div>
     )
 
     return(
-      <div className={this.props.display ? "popup" : ""}>
+      <div id={this.props.display ? "popup" : ""}>
           {this.props.display ? form : ""}
       </div>
     )
