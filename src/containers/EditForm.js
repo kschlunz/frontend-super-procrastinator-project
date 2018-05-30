@@ -12,7 +12,7 @@ class EditForm extends React.Component{
     .then(res => res.json())
     .then(res => {
       const allNewsNames = res.map((newsItem) => newsItem.website)
-      const namesArray = [...new Set(allNewsNames)]
+      const namesArray = [...new Set(allNewsNames)].sort()
       const newsList = namesArray.map((newsItem) => Object.assign({}, {website: newsItem, checked: true}))
 
       this.setState({
@@ -40,13 +40,13 @@ class EditForm extends React.Component{
 
     const form = (
       <div id="popup_inner">
+        <button id="x" onClick = {this.props.handleEditClick}>X</button>
         <div id="popup_innermost">
           <form>
             <ul>
               {detailNews}
             </ul>
           </form>
-          <button onClick = {this.props.handleEditClick}>Close Window</button>
         </div>
       </div>
     )
