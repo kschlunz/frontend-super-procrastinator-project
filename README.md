@@ -1,5 +1,7 @@
 ## Super Procrastinator Newsfeed
-A customizable Newsfeed that shows a few stories from different news sources for today's news.
+A customizable Newsfeed that shows a few stories from different news sources for today's news. Ability to determine which news site you would like to get news from through the edit feature. Each news story is a link to that story. 
+
+Backend: https://github.com/kschlunz/super-procrastinator-project
 
 ## Screenshots 
 
